@@ -39,11 +39,14 @@ const createFolderScheme = (name) => {
 }
 
 const targetPath = path.resolve(__dirname, pathArg)
+let foldersCounter = 0
+let filesCounter = 0
 
 /** Обход дерева, рекурсивное построение структуры папок */
 const readFolder = async (iterationPath, depth = 0) => {
   const files = await fs.readdir(iterationPath)
   const folderScheme = createFolderScheme(path.basename(iterationPath))
+  ++foldersCounter
 
   for (const file of files) {
     const filePath = path.resolve(iterationPath, file)
@@ -57,6 +60,7 @@ const readFolder = async (iterationPath, depth = 0) => {
       const scheme = await readFolder(filePath, depth + 1)
       folderScheme.children.push(scheme)
     } else {
+      ++filesCounter
       folderScheme.children.push(path.basename(filePath))
     }
   }
@@ -122,7 +126,7 @@ const init = async () => {
   try {
     const scheme = await readFolder(targetPath)
     const tree = drawFolderTree(scheme)
-    console.log(tree)
+    console.log(`${tree}${foldersCounter} directories, ${filesCounter} files`)
   } catch (err) {
     console.error(err)
   }
