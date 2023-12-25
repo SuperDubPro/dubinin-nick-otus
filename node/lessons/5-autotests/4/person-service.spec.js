@@ -1,19 +1,24 @@
 const { PersonService } = require('./person-service')
 const { Person } = require('../3/person')
+const { logger } = require('./logger')
+
+jest.mock('./logger')
 
 describe('PersonService', () => {
   it('should find by name', () => {
     // Given
     const loggingFn = jest.fn()
-    const mockLogger = {
-      log: loggingFn
-    }
+    // const mockLogger = {
+    //   log: loggingFn
+    // }
+    logger.log.mockImplementation(loggingFn)
+
     const people = [
       new Person(10, 'Ars'),
       new Person(20, 'Nick'),
       new Person(25, 'Ars'),
     ]
-    const service = new PersonService(mockLogger, people)
+    const service = new PersonService(people)
     // when
     const found = service.getByName('Ars')
     // Then
