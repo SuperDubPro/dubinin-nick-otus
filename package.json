@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "7-express-dev": "npx nodemon ./node/lessons/7-express/server",
+    "8-server": "npx nodemon ./node/lessons/8-express-features/server",
     "test": "jest"
   },
   "author": "",
