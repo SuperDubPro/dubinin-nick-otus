@@ -20,7 +20,7 @@ const LINES = {
   VERTICAL: '│',
   HORIZONTAL: '──',
   CORNER: '└',
-  TAB: ' ',
+  TAB: '  ',
 }
 
 /** Получение строки из item, повторяющихся length раз  */
