@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "7-express-dev": "npx nodemon ./node/lessons/7-express/server",
-    "test": "jest"
+    "test": "jest",
+    "test-debug": "jest --silent=false",
+    "7-express-dev": "npx nodemon ./node/lessons/7-express/server"
   },
   "author": "",
   "license": "ISC",
