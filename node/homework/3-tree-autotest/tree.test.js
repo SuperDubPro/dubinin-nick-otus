@@ -1,15 +1,61 @@
+// const mock = require('mock-fs')
 const { FolderTree } = require('../1.2-folder-tree')
+const { createTestFolder, deleteTestFolder } = require('./createTestFolder')
 
 describe('tree', () => {
   const originalLog = console.log
 
-  // убираем console.log дерева из консоли теста
   beforeAll(() => {
+    // убираем console.log дерева из консоли теста
     console.log = jest.fn()
+    createTestFolder()
+    // mock({
+    //   // 'D:/Projects/study/dubinin-nick-otus/node/homework/3-tree-autotest/tree-test': {
+    //   './tree-test': {
+    //     'aaa': {
+    //       'aa': {
+    //         'a': {
+    //           'deep': {
+    //             'andDeeper': {
+    //               'andDeeper.js': '',
+    //             },
+    //             'deep.js': '',
+    //           },
+    //           'a.js': '',
+    //         },
+    //         'aa.js': '',
+    //       },
+    //       'aaa.js': '',
+    //       'aaa2.js': '',
+    //     },
+    //     'almost2Empty': {
+    //       'empty1': {},
+    //       'empty2': {},
+    //     },
+    //     'almostEmpty': {
+    //       'empty': {},
+    //     },
+    //     'bbb': {
+    //       'empty': {},
+    //       'bbb.js': '',
+    //     },
+    //     'ccc': {
+    //       'ccc.js': '',
+    //     },
+    //     'ddd': {
+    //       'ddd1.js': '',
+    //       'ddd2.js': '',
+    //     },
+    //     'empty': {},
+    //     'treeTest.js': '',
+    //   },
+    // })
   })
 
   afterAll(() => {
     console.log = originalLog
+    deleteTestFolder()
+    // mock.restore()
   })
 
   it('should throw no path error', () => {
