@@ -1,8 +1,7 @@
 // fformula@gmail.com преподаватель
 
-howManyLuckyTicketsFor6NumberJunior = (ticketNumber) => {
+const howManyLuckyTicketsFor6Number = (ticketNumber) => {
     let count = 0
-    // let n = 6
 
     for (let a1 = 0; a1 < 10; a1++) {
     for (let a2 = 0; a2 < 10; a2++) {
@@ -23,8 +22,6 @@ howManyLuckyTicketsFor6NumberJunior = (ticketNumber) => {
     return count
 };
 
-// 55252
-
 module.exports = {
-    howManyLuckyTicketsFor6NumberJunior,
+    howManyLuckyTicketsFor6Number,
 }

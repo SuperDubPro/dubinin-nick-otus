@@ -3,6 +3,7 @@ const howManyLuckyTicketsRecursion = (n) => {
 
     const calculateNext = (n, sumA, sumB) => {
         if (n === 0) {
+            // проверку суммы делаем когда n === 0 потому, что тогда будет сумма n чисел, сумма их части нам не интересна
             if (sumA === sumB) {
                 result++
             }
