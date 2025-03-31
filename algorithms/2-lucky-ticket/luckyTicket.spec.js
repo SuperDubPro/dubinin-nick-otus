@@ -1,5 +1,5 @@
 const { howManyLuckyTicketsFor6Number } = require('./junior')
-const { howManyLuckyTicketsRecursion } = require('./middle')
+const { howManyLuckyTicketsRecursion, howManyLuckyTicketsFasterRecursion } = require('./middle')
 const { howManyLuckyTickets } = require('./senior')
 
 describe('2-lucky-tickets', () => {
@@ -23,7 +23,7 @@ describe('2-lucky-tickets', () => {
         const N = 2
         const result = howManyLuckyTicketsRecursion(N)
         expect(result).toEqual(670)
-    })
+    })  
 
     test('lucky tickets recursion N = 3', () => {
         const N = 3
@@ -43,6 +43,30 @@ describe('2-lucky-tickets', () => {
     //     const result = howManyLuckyTicketsRecursion(N)
     //     expect(result).toEqual(432457640)
     // })
+
+    test('lucky tickets faster recursion N = 1', () => {
+        const N = 1
+        const result = howManyLuckyTicketsFasterRecursion(N)
+        expect(result).toEqual(10)
+    })
+
+    test('lucky tickets faster recursion N = 2', () => {
+        const N = 2
+        const result = howManyLuckyTicketsFasterRecursion(N)
+        expect(result).toEqual(670)
+    })
+
+    test('lucky tickets faster recursion N = 3', () => {
+        const N = 3
+        const result = howManyLuckyTicketsFasterRecursion(N)
+        expect(result).toEqual(55252)
+    })
+
+    test('lucky tickets faster recursion N = 4', () => {
+        const N = 4
+        const result = howManyLuckyTicketsFasterRecursion(N)
+        expect(result).toEqual(4816030)
+    })
 
     test('lucky tickets smart N = 1', () => {
         const N = 1
