@@ -68,6 +68,12 @@ describe('2-lucky-tickets', () => {
         expect(result).toEqual(4816030)
     })
 
+    test('lucky tickets faster recursion N = 5', () => {
+        const N = 5
+        const result = howManyLuckyTicketsFasterRecursion(N)
+        expect(result).toEqual(432457640)
+    })
+
     test('lucky tickets smart N = 1', () => {
         const N = 1
         const result = howManyLuckyTickets(N)
